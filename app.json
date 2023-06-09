@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "battle",
+    "slug": "battle",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/img/Logo.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/img/Logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#113f61"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/img/Logo.png",
+        "backgroundColor": "#113f61"
+      }
+    },
+    "web": {
+      "favicon": "./assets/img/Logo.png"
+    }
+  }
+}
