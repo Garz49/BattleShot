@@ -1,9 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
 import { StyleSheet, SafeAreaView, View, Image, Alert } from 'react-native';
 
 import { RoundedButton } from '../components/RoundedButton';
-import { Square } from '../components/square';
 import { colors } from '../utils/colors'
 import  Column  from './column'
 

@@ -1,14 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, SafeAreaView, Text, View, Image } from 'react-native';
+import { StyleSheet, SafeAreaView, Text, View} from 'react-native';
 
 import { Square } from '../components/square';
-import { colors } from '../utils/colors'
+import { colors } from '../utils/colors';
 
 const Column = ({
     column = {},
   })  => {
-
 
   const indexMap = {
     'A': 0,

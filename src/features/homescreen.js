@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, SafeAreaView, Text, View, Image } from 'react-native';
+import { StyleSheet, SafeAreaView, View, Image } from 'react-native';
 
 import { RoundedButton } from '../components/RoundedButton';
 import { colors } from '../utils/colors'

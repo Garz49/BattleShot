@@ -4,10 +4,10 @@
     "slug": "battle",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/img/Logo.png",
+    "icon": "./src/assets/img/Logo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/img/Logo.png",
+      "image": "./src/assets/img/Logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#113f61"
     },
@@ -19,12 +19,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/img/Logo.png",
+        "foregroundImage": "./src/assets/img/Logo.png",
         "backgroundColor": "#113f61"
       }
     },
     "web": {
-      "favicon": "./assets/img/Logo.png"
+      "favicon": "./src/assets/img/Logo.png"
     }
   }
 }
