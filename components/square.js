@@ -7,7 +7,7 @@ export const Square = ({
   textStyle = {},
   size = 125,
   borderLen = 1,
-  color = 'red',
+  color = 'transparent',
   ...props
 }) => {
   return (

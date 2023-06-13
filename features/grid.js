@@ -4,7 +4,7 @@ import { StyleSheet, SafeAreaView, Text, View, Image } from 'react-native';
 
 import { Square } from '../components/square';
 import { colors } from '../utils/colors'
-import  Row  from '../features/row'
+import  Column  from './column'
 
 const Grid = () => {
 
@@ -19,7 +19,7 @@ const Grid = () => {
       </View>
       <View style={styles.gridContainer}>
         <View style={styles.grid}>
-          <Row
+          <Column
             column='A'
           />
         </View>

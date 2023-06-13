@@ -5,113 +5,123 @@ import { StyleSheet, SafeAreaView, Text, View, Image } from 'react-native';
 import { Square } from '../components/square';
 import { colors } from '../utils/colors'
 
-const Row = ({
+const Column = ({
     column = {},
   })  => {
 
+
+  const indexMap = {
+    'A': 0,
+    'B': 1,
+    'C': 2,
+    'D': 3,
+    'E': 4,
+    'F': 5,
+    'G': 6,
+    'H': 7,
+    'I': 8,
+    'J': 9,
+  };
+  
+  const index = indexMap[column];
+      
   const initialState = Array.from({ length: 10 }, () => 'transparent');
   const [state, setState] = useState(initialState);
 
-  // Pour accéder à une variable d'état dynamique
-  const line = column;
-  const index = parseInt(line) - 1;
-  const current = state[index];
+  // Utilisation de la fonction pour mettre à jour une variable d'état dynamique
 
-// Pour mettre à jour une variable d'état dynamique
-  const updateState = (index, value) => {
+  const onPressSquare = (indexToUpdate) => {
     setState((prevState) => {
       const newState = [...prevState];
-      newState[index] = value;
+      const currentValue = newState[indexToUpdate];
+  
+      switch (currentValue) {
+        case 'transparent':
+          newState[indexToUpdate] = colors.SecondaryBlue;
+          break;
+  
+        case colors.SecondaryBlue:
+          newState[indexToUpdate] = colors.SecondaryPurple;
+          break;
+  
+        case colors.SecondaryPurple:
+          newState[indexToUpdate] = 'transparent';
+          break;
+  
+        default:
+          break;
+      }
+  
       return newState;
     });
   };
-
-  // Utilisation de la fonction pour mettre à jour une variable d'état dynamique
-  const indexToUpdate = 1;
-  updateState(indexToUpdate, 'nouvelle valeur');
-
-  const onPressSquare = (indexToUpdate) => {
-    switch(state[indexToUpdate])
-    {
-      case 'transparent':
-        updateState(indexToUpdate, colors.SecondaryBlue);
-        break;
-      
-        case colors.SecondaryBlue:
-        updateState(indexToUpdate, colors.SecondaryPurple);
-        break;
-
-        case colors.SecondaryPurple:
-        updateState(indexToUpdate, 'transparent');
-        break;
-    }
-  }
+  
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
-      <View style={styles.rowContainer}>
+      <View style={styles.columnContainer}>
         <View style={styles.caseLetter}>
           <Text style={styles.letter}>{column}</Text>
         </View>
         <Square
         size={35}
         borderLen={1}
-        color={state}
+        color={state[1]}
         onPress={() => onPressSquare(1)}
         />
         <Square
         size={35}
         borderLen={1}
-        color={state}
+        color={state[2]}
         onPress={() => onPressSquare(2)}
         />
         <Square
         size={35}
         borderLen={1}
-        color={state}
+        color={state[3]}
         onPress={() => onPressSquare(3)}
         />
         <Square
         size={35}
         borderLen={1}
-        color={state}
+        color={state[4]}
         onPress={() => onPressSquare(4)}
         />
         <Square
         size={35}
         borderLen={1}
-        color={state}
+        color={state[5]}
         onPress={() => onPressSquare(5)}
         />
         <Square
         size={35}
         borderLen={1}
-        color={state}
+        color={state[6]}
         onPress={() => onPressSquare(6)}
         />
         <Square
         size={35}
         borderLen={1}
-        color={state}
+        color={state[7]}
         onPress={() => onPressSquare(7)}
         />
         <Square
         size={35}
         borderLen={1}
-        color={state}
+        color={state[8]}
         onPress={() => onPressSquare(8)}
         />
         <Square
         size={35}
         borderLen={1}
-        color={state}
+        color={state[9]}
         onPress={() => onPressSquare(9)}
         />
         <Square
         size={35}
         borderLen={1}
-        color={state}
+        color={state[10]}
         onPress={() => onPressSquare(10)}
         />
       </View>
@@ -126,7 +136,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  rowContainer: {
+  columnContainer: {
   },
   caseLetter: {
     alignItems: 'center',
@@ -137,4 +147,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Row;
+export default Column;
