@@ -67,6 +67,12 @@ const Column = ({
         <Square
         size={35}
         borderLen={1}
+        color={state[0]}
+        onPress={() => onPressSquare(0)}
+        />
+        <Square
+        size={35}
+        borderLen={1}
         color={state[1]}
         onPress={() => onPressSquare(1)}
         />
@@ -117,12 +123,6 @@ const Column = ({
         borderLen={1}
         color={state[9]}
         onPress={() => onPressSquare(9)}
-        />
-        <Square
-        size={35}
-        borderLen={1}
-        color={state[10]}
-        onPress={() => onPressSquare(10)}
         />
       </View>
     </SafeAreaView>

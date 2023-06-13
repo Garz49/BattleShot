@@ -1,12 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, SafeAreaView, Text, View, Image } from 'react-native';
+import { StyleSheet, SafeAreaView, View, Image, Alert } from 'react-native';
 
+import { RoundedButton } from '../components/RoundedButton';
 import { Square } from '../components/square';
 import { colors } from '../utils/colors'
 import  Column  from './column'
 
-const Grid = () => {
+const Grid = ({navigation}) => {
+
+  const buttonAlert = () =>
+    Alert.alert('All data will be lost !', 'Do you want to leave the game ?', [
+      {
+        text: 'Cancel',
+        onPress: () => {},
+        style: 'cancel',
+      },
+      {text: 'OK', onPress: () => navigation.navigate('HomePage')},
+    ]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -22,6 +33,40 @@ const Grid = () => {
           <Column
             column='A'
           />
+          <Column
+            column='B'
+          />
+          <Column
+            column='C'
+          />
+          <Column
+            column='D'
+          />
+          <Column
+            column='E'
+          />
+          <Column
+            column='F'
+          />
+          <Column
+            column='G'
+          />
+          <Column
+            column='H'
+          />
+          <Column
+            column='I'
+          />
+          <Column
+            column='J'
+          />
+        </View>
+        <View style={styles.exitButton}>
+          <RoundedButton 
+              size={60} 
+              title="Exit"
+              onPress={buttonAlert}
+            />
         </View>
       </View>
     </SafeAreaView>
@@ -51,6 +96,11 @@ const styles = StyleSheet.create({
   },
   grid: {
     flexDirection: 'row',
+  },
+  exitButton: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });
 
