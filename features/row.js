@@ -6,33 +6,43 @@ import { Square } from '../components/square';
 import { colors } from '../utils/colors'
 
 const Row = ({
-    line = 'A',
+    column = {},
   })  => {
 
-  const [currentA1, setCurrentA1] = useState(colors.white);
-  const [currentA2, setCurrentA2] = useState(colors.white);
-  const [currentA3, setCurrentA3] = useState(colors.white);
-  const [currentA4, setCurrentA4] = useState(colors.white);
-  const [currentA5, setCurrentA5] = useState(colors.white);
-  const [currentA6, setCurrentA6] = useState(colors.white);
-  const [currentA7, setCurrentA7] = useState(colors.white);
-  const [currentA8, setCurrentA8] = useState(colors.white);
-  const [currentA9, setCurrentA9] = useState(colors.white);
-  const [currentA10, setCurrentA10] = useState(colors.white);
+  const initialState = Array.from({ length: 10 }, () => 'transparent');
+  const [state, setState] = useState(initialState);
 
-  const onPressSquare = () => {
-    switch(currentA1)
+  // Pour accéder à une variable d'état dynamique
+  const line = column;
+  const index = parseInt(line) - 1;
+  const current = state[index];
+
+// Pour mettre à jour une variable d'état dynamique
+  const updateState = (index, value) => {
+    setState((prevState) => {
+      const newState = [...prevState];
+      newState[index] = value;
+      return newState;
+    });
+  };
+
+  // Utilisation de la fonction pour mettre à jour une variable d'état dynamique
+  const indexToUpdate = 1;
+  updateState(indexToUpdate, 'nouvelle valeur');
+
+  const onPressSquare = (indexToUpdate) => {
+    switch(state[indexToUpdate])
     {
-      case colors.white:
-        setCurrentA1(colors.SecondaryBlue);
+      case 'transparent':
+        updateState(indexToUpdate, colors.SecondaryBlue);
         break;
       
         case colors.SecondaryBlue:
-        setCurrentA1(colors.SecondaryPurple);
+        updateState(indexToUpdate, colors.SecondaryPurple);
         break;
 
         case colors.SecondaryPurple:
-        setCurrentA1(colors.white);
+        updateState(indexToUpdate, 'transparent');
         break;
     }
   }
@@ -41,66 +51,68 @@ const Row = ({
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
       <View style={styles.rowContainer}>
-        <Text>A</Text>
+        <View style={styles.caseLetter}>
+          <Text style={styles.letter}>{column}</Text>
+        </View>
         <Square
         size={35}
         borderLen={1}
-        color={currentA1}
-        onPress={onPressSquare}
+        color={state}
+        onPress={() => onPressSquare(1)}
         />
         <Square
         size={35}
         borderLen={1}
-        color={currentA2}
-        onPress={onPressSquare}
+        color={state}
+        onPress={() => onPressSquare(2)}
         />
         <Square
         size={35}
         borderLen={1}
-        color={currentA3}
-        onPress={onPressSquare}
+        color={state}
+        onPress={() => onPressSquare(3)}
         />
         <Square
         size={35}
         borderLen={1}
-        color={currentA4}
-        onPress={onPressSquare}
+        color={state}
+        onPress={() => onPressSquare(4)}
         />
         <Square
         size={35}
         borderLen={1}
-        color={currentA5}
-        onPress={onPressSquare}
+        color={state}
+        onPress={() => onPressSquare(5)}
         />
         <Square
         size={35}
         borderLen={1}
-        color={currentA6}
-        onPress={onPressSquare}
+        color={state}
+        onPress={() => onPressSquare(6)}
         />
         <Square
         size={35}
         borderLen={1}
-        color={currentA7}
-        onPress={onPressSquare}
+        color={state}
+        onPress={() => onPressSquare(7)}
         />
         <Square
         size={35}
         borderLen={1}
-        color={currentA8}
-        onPress={onPressSquare}
+        color={state}
+        onPress={() => onPressSquare(8)}
         />
         <Square
         size={35}
         borderLen={1}
-        color={currentA9}
-        onPress={onPressSquare}
+        color={state}
+        onPress={() => onPressSquare(9)}
         />
         <Square
         size={35}
         borderLen={1}
-        color={currentA10}
-        onPress={onPressSquare}
+        color={state}
+        onPress={() => onPressSquare(10)}
         />
       </View>
     </SafeAreaView>
@@ -110,16 +122,19 @@ const Row = ({
 const styles = StyleSheet.create({
   container: {
     paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
-    flex: 1,
     backgroundColor: colors.PrimaryBlue,
     alignItems: 'center',
     justifyContent: 'center',
   },
   rowContainer: {
-    flex: 1,
-    padding: 20,
-    margin: 10,
   },
+  caseLetter: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  letter: {
+    color: colors.white
+  }
 });
 
 export default Row;

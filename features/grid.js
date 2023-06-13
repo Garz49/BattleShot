@@ -20,34 +20,7 @@ const Grid = () => {
       <View style={styles.gridContainer}>
         <View style={styles.grid}>
           <Row
-            line='A'
-          />
-          <Row
-            line='B'
-          />
-          <Row
-            line='C'
-          />
-          <Row
-            line='D'
-          />
-          <Row
-            line='E'
-          />
-          <Row
-            line='F'
-          />
-          <Row
-            line='G'
-          />
-          <Row
-            line='H'
-          />
-          <Row
-            line='I'
-          />
-          <Row
-            line='J'
+            column='A'
           />
         </View>
       </View>
@@ -77,10 +50,6 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   grid: {
-    width: 350,
-    height: 350,
-    borderWidth: 2,
-    borderColor: colors.white,
     flexDirection: 'row',
   }
 });
