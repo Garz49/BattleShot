@@ -1,11 +1,9 @@
 # BattleShot
 
-# Nom de l'application
-
 BattleShot is a derivative of the naval battle game. Ships are made up of shooters, and when one of your ships is hit you have to drink the shooter in question.
 At the end of the game, the losing team must finish the shooters of the opposing team.
 
-WARNING: Alcohol consumption is dangerous for your health and should be used in moderation.
+**WARNING**: Alcohol consumption is dangerous for your health and should be used in moderation.
 
 ## Requirements
 
@@ -50,4 +48,4 @@ This will launch the Expo Metro Bundler development server. You can now choose t
 
 ## Licence
 
-This project is under MIT Licence
+This project is under MIT Licence.
