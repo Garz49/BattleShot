@@ -7,6 +7,7 @@ import { colors } from '../utils/colors';
 
 const Column = ({
     column = {},
+    sizeSquare = 35,
   })  => {
 
   const indexMap = {
@@ -64,61 +65,61 @@ const Column = ({
           <Text style={styles.letter}>{column}</Text>
         </View>
         <Square
-        size={35}
+        size={sizeSquare}
         borderLen={1}
         color={state[0]}
         onPress={() => onPressSquare(0)}
         />
         <Square
-        size={35}
+        size={sizeSquare}
         borderLen={1}
         color={state[1]}
         onPress={() => onPressSquare(1)}
         />
         <Square
-        size={35}
+        size={sizeSquare}
         borderLen={1}
         color={state[2]}
         onPress={() => onPressSquare(2)}
         />
         <Square
-        size={35}
+        size={sizeSquare}
         borderLen={1}
         color={state[3]}
         onPress={() => onPressSquare(3)}
         />
         <Square
-        size={35}
+        size={sizeSquare}
         borderLen={1}
         color={state[4]}
         onPress={() => onPressSquare(4)}
         />
         <Square
-        size={35}
+        size={sizeSquare}
         borderLen={1}
         color={state[5]}
         onPress={() => onPressSquare(5)}
         />
         <Square
-        size={35}
+        size={sizeSquare}
         borderLen={1}
         color={state[6]}
         onPress={() => onPressSquare(6)}
         />
         <Square
-        size={35}
+        size={sizeSquare}
         borderLen={1}
         color={state[7]}
         onPress={() => onPressSquare(7)}
         />
         <Square
-        size={35}
+        size={sizeSquare}
         borderLen={1}
         color={state[8]}
         onPress={() => onPressSquare(8)}
         />
         <Square
-        size={35}
+        size={sizeSquare}
         borderLen={1}
         color={state[9]}
         onPress={() => onPressSquare(9)}

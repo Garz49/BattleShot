@@ -4,6 +4,7 @@ import { StyleSheet, SafeAreaView, View, Image, Alert } from 'react-native';
 import { RoundedButton } from '../components/RoundedButton';
 import { colors } from '../utils/colors'
 import  Column  from './column'
+import  ColumnNumber  from './columnNumber'
 
 const Grid = ({navigation}) => {
 
@@ -17,6 +18,8 @@ const Grid = ({navigation}) => {
       {text: 'OK', onPress: () => navigation.navigate('HomePage')},
     ]);
 
+    const sizeSquare = 33;
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
@@ -28,35 +31,49 @@ const Grid = ({navigation}) => {
       </View>
       <View style={styles.gridContainer}>
         <View style={styles.grid}>
+          <ColumnNumber
+            column=''
+            sizeSquare={sizeSquare}
+          />
           <Column
             column='A'
+            sizeSquare={sizeSquare}
           />
           <Column
             column='B'
+            sizeSquare={sizeSquare}
           />
           <Column
             column='C'
+            sizeSquare={sizeSquare}
           />
           <Column
             column='D'
+            sizeSquare={sizeSquare}
           />
           <Column
             column='E'
+            sizeSquare={sizeSquare}
           />
           <Column
             column='F'
+            sizeSquare={sizeSquare}
           />
           <Column
             column='G'
+            sizeSquare={sizeSquare}
           />
           <Column
             column='H'
+            sizeSquare={sizeSquare}
           />
           <Column
             column='I'
+            sizeSquare={sizeSquare}
           />
           <Column
             column='J'
+            sizeSquare={sizeSquare}
           />
         </View>
         <View style={styles.exitButton}>

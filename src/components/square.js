@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 import { colors } from '../utils/colors';
 
 export const Square = ({
@@ -12,6 +12,7 @@ export const Square = ({
 }) => {
   return (
     <TouchableOpacity style={[styles(size, color, borderLen).square, style]} onPress={props.onPress}>
+      <Text style={[styles(size).text, textStyle]}>{props.title}</Text>
     </TouchableOpacity>
   );
 };
@@ -22,6 +23,13 @@ const styles = (size, color, borderLen) => ({
       height: size,
       borderWidth: borderLen,
       borderColor: colors.white,
-      backgroundColor: color
+      backgroundColor: color,
+      AlignItems: 'center',
+      justifyContent: 'center',
+    },
+    text: { 
+      color: colors.white, 
+      fontSize: size / 2, 
+      textAlign: 'center',
     },
   }); 

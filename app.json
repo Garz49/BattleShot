@@ -2,7 +2,7 @@
   "expo": {
     "name": "BattleShot",
     "slug": "battle-shot",
-    "description": "This is the BattleGot app.",
+    "description": "This is the BattleShot app.",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/img/Logo.png",
