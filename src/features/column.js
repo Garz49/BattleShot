@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, SafeAreaView, Text, View} from 'react-native';
+import { StyleSheet, Text, View} from 'react-native';
 
 import { Square } from '../components/square';
 import { colors } from '../utils/colors';
@@ -58,7 +58,7 @@ const Column = ({
   
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <StatusBar style="auto" />
       <View style={styles.columnContainer}>
         <View style={styles.caseLetter}>
@@ -125,13 +125,12 @@ const Column = ({
         onPress={() => onPressSquare(9)}
         />
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
     backgroundColor: colors.PrimaryBlue,
     alignItems: 'center',
     justifyContent: 'center',

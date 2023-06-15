@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, SafeAreaView, View, Image } from 'react-native';
+import { StyleSheet, View, Image } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { RoundedButton } from '../components/RoundedButton';
 import { colors } from '../utils/colors'
@@ -32,7 +33,6 @@ const HomePage = ({navigation}) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
     flex: 1,
     backgroundColor: colors.PrimaryBlue,
     alignItems: 'center',
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain'
   },
   homeButton: {
-    flex: 2,
+    flex: 3,
   }
 });
 

@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, SafeAreaView, View, Image, Alert } from 'react-native';
+import { StyleSheet, View, Image, Alert } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { RoundedButton } from '../components/RoundedButton';
 import { colors } from '../utils/colors'
@@ -90,7 +91,7 @@ const Grid = ({navigation}) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+    paddingTop: 35,
     flex: 7,
     backgroundColor: colors.PrimaryBlue,
     alignItems: 'center',
