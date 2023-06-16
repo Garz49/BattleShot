@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Image, Alert } from 'react-native';
+import { StyleSheet, View, Image, Alert, Dimensions } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { RoundedButton } from '../components/RoundedButton';
@@ -19,7 +19,9 @@ const Grid = ({navigation}) => {
       {text: 'OK', onPress: () => navigation.navigate('HomePage')},
     ]);
 
-    const sizeSquare = 33;
+    const windowWidth = Dimensions.get('window').width;
+    console.log({windowWidth})
+    const sizeSquare = (windowWidth-10)/11;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -109,6 +111,7 @@ const styles = StyleSheet.create({
     flex: 5,
     padding: 20,
     margin: 10,
+    marginRight: 20
   },
   grid: {
     flexDirection: 'row',
